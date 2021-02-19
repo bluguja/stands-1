@@ -21,11 +21,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
-# appoint-1
-# Single-Table-Inheritance
-# Single-Table-Inheritance
-# teach-1
-# practice
-# teach-1
-# stands-1
