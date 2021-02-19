@@ -1,0 +1,18 @@
+<h2>Teachers</h2>
+<table>
+  <tr>
+    <th> # </th>
+    <th> Full name </th>
+    <th> Action </th>
+  </tr>
+<% if @teachers.present? %>
+  <% @serial = 1 %>
+  <% @teachers.each do |teacher| %>
+    <tr> <%= render partial: 'index', locals: {teacher: teacher} %> </tr>
+    <% @serial += 1  %>
+  <% end %>
+<% end %>
+</table>
+
+
+

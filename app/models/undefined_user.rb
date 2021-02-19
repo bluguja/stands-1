@@ -1,0 +1,3 @@
+class UndefinedUser < User
+
+end

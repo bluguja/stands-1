@@ -1,0 +1,22 @@
+<h2>My Schedules</h2>
+<% if current_user.student? %>
+  <%= link_to 'Fix a schedule', teachers_path  %>
+<% end %>
+<table>
+  <tr>
+    <th> # </th>
+    <th> Full name </th>
+    <th> Schedule Date </th>
+    <th> Action </th>
+  </tr>
+  <% if @schedules.present? %>
+    <% @serial = 1 %>
+    <% @schedules.each do |schedule| %>
+      <tr> <%= render partial: 'index', locals: {schedule: schedule} %> </tr>
+      <% @serial += 1  %>
+    <% end %>
+  <% end %>
+</table>
+
+
+

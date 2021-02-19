@@ -1,0 +1,22 @@
+<h1>Schedules for <%= @teacher.full_name %></h1>
+
+<%= form_for(@schedule, html: {autocomplete: 'off'}) do |schedule| %>
+
+  <%= render partial: 'layouts/error_message', locals: {object: @schedule} %>
+  <%= schedule.hidden_field :teacher_id, value: @teacher.id, class: "form-control" %>
+
+  <div class="form-group">
+    <%= schedule.label :schedule_date, class: "control-label" %>
+    <%= schedule.date_field :schedule_date, class: "form-control", placeholder: "yyyy-mm-dd" %>
+  </div>
+
+  <br/>
+  <div class="form-group">
+    <%= schedule.submit 'Save', class: "btn btn-success" %> |
+    <%= link_to "Back", :back, class: "btn btn-dark" %>
+  </div>
+
+<% end %>
+</div>
+
+

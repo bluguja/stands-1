@@ -1,0 +1,18 @@
+<% if logged %>
+  <ul>
+    <li><%= link_to 'Home', root_path, class: "active" %></li>
+    <li><%= link_to 'My Schedules', schedules_path %>
+      <% if current_user.teacher? %>
+      <li><%= link_to 'My Students', students_path %>
+    <% end %>
+    <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+    <div class="user">
+      <li><h5>Logged in as <%= current_user.full_name %></h5></li>
+    </div>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to 'Home', root_path, class: "active" %></li>
+    <li><%= link_to "Log in", new_user_session_path %></li>
+  </ul>
+<% end %>

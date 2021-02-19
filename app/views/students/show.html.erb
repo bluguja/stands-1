@@ -1,0 +1,19 @@
+<h2><%= @student.full_name %> schedules</h2>
+<table>
+  <tr>
+    <th> # </th>
+    <th> Full name </th>
+    <th> Schedule Date </th>
+    <th> Action </th>
+  </tr>
+  <% if @schedules.present? %>
+    <% @serial = 1 %>
+    <% @schedules.each do |schedule| %>
+      <tr> <%= render partial: 'schedules/index', locals: {schedule: schedule} %> </tr>
+      <% @serial += 1  %>
+    <% end %>
+  <% end %>
+</table>
+
+
+

@@ -1,0 +1,10 @@
+<td><%= @serial %></td>
+<td>
+  <% if current_user.student? %>
+    <%= schedule.teacher.full_name %>
+  <% else %>
+    <%= schedule.student.full_name %>
+  <% end %>
+</td>
+<td><%= schedule.schedule_date.strftime("%d %B, %Y, %A") %></td>
+<td><%= link_to 'Remove Schedule', schedule_path(schedule), method: :delete, data: {confirm: 'Are you sure?'}  %></td>
